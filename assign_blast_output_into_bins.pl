@@ -750,15 +750,20 @@ sub initialize {
 	#system("rm -rf $final_out_dir/$master");
 	system("mkdir -p $final_out_dir/$master");
 
-	$master_numbers_hash{"A"} =1; 
+	$master_numbers_hash{"A"} = 1; 
 	$master_numbers_hash{"B"} = 2;
 	$master_numbers_hash{"C"} = 3;
 	$master_numbers_hash{"D"} = 4;
-	$master_numbers_hash{"E"} = 5; 
-	$master_numbers_hash{"F"} = 6;
-	$master_numbers_hash{"G"} = 7;
-	$master_numbers_hash{"H"} = 8;
-	$master_numbers_hash{"I"} = 9;
+	$master_numbers_hash{"W"} = 5; 
+	$master_numbers_hash{"X"} = 6;
+	$master_numbers_hash{"Y"} = 7;
+	$master_numbers_hash{"Z"} = 8;
+	#$master_numbers_hash{"E"} = 5; 
+	#$master_numbers_hash{"F"} = 6;
+	#$master_numbers_hash{"G"} = 7;
+	#$master_numbers_hash{"H"} = 8;
+	#$master_numbers_hash{"I"} = 9;
+	
 	#print Dumper(\%master_numbers_hash);
 }
 
@@ -772,9 +777,12 @@ sub create_amplicons_db_and_cal_barcodes_fasta_files {
 
 	$header=<FILE>;
 	@header=split(/\t/,$header);
+
+
 	for($i=0;$i<=$#header;$i++){
+		chomp($header[$i]);
 		#print "$i -> $header[$i]\n";
-		if ($header[$i] eq 'Sample name'){
+		if ($header[$i] eq 'Sample Name'){
 			$sample_index=$i;
 		}
 		if ($header[$i] eq 'Gene Name'){
@@ -788,7 +796,10 @@ sub create_amplicons_db_and_cal_barcodes_fasta_files {
 		}
 	}
 
-
+	print "sample_index: $sample_index\n";
+	print "gene_index: $gene_index\n";
+	print "study_index: $study_index\n";
+	print "sequence_index: $sequence_index\n";
 
 	# Store all unique sequences (key) and their ids (value) into a hash.
 	# In case a sequence is the same in two samples/ids, keep the first sample/id 
@@ -876,6 +887,10 @@ sub create_amplicons_db_and_cal_barcodes_fasta_files {
 	}
 	close(FH);
 
+	print "Created db/$master"."_all_amplicons.fa\n";
+
+
+	#should add here: make_blast_dbs.pl call (located in the db/ dir)
 }
 
 

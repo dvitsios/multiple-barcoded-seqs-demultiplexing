@@ -6,8 +6,9 @@ use threads;
 
 my @threads = ();
 
-my @libs = ("A", "B", "C", "D", "E", "F", "G", "H", "I");
-#my @libs = ("E", "F", "G", "H", "I");
+#my @libs = ("A", "B", "C", "D", "E", "F", "G", "H", "I");
+my @libs = ("W", "X", "Y", "Z");
+#my @libs = ("W");
 
 foreach(@libs){
 	my $lib = $_;

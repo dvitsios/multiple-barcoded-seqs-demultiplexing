@@ -7,18 +7,23 @@ use threads;
 my @threads = ();
 
 #my @libs = ("A", "B", "C", "D", "E", "F", "G", "H", "I");
-my @libs = ("E", "F", "G", "H", "I");
+#my @libs = ("A", "B", "C", "D");
+my @libs = ("W", "X", "Y", "Z");
 
 my %master_numbers_hash = ();
-$master_numbers_hash{"A"} =1;
-$master_numbers_hash{"B"} = 2;
-$master_numbers_hash{"C"} = 3;
-$master_numbers_hash{"D"} = 4;
-$master_numbers_hash{"E"} = 5;
-$master_numbers_hash{"F"} = 6;
-$master_numbers_hash{"G"} = 7;
-$master_numbers_hash{"H"} = 8;
-$master_numbers_hash{"I"} = 9;
+#$master_numbers_hash{"A"} = 1;
+#$master_numbers_hash{"B"} = 2;
+#$master_numbers_hash{"C"} = 3;
+#$master_numbers_hash{"D"} = 4;
+$master_numbers_hash{"W"} = 5;
+$master_numbers_hash{"X"} = 6;
+$master_numbers_hash{"Y"} = 7;
+$master_numbers_hash{"Z"} = 8;
+#$master_numbers_hash{"E"} = 5;
+#$master_numbers_hash{"F"} = 6;
+#$master_numbers_hash{"G"} = 7;
+#$master_numbers_hash{"H"} = 8;
+#$master_numbers_hash{"I"} = 9;
 
 
 foreach(@libs){
