@@ -1,4 +1,4 @@
-# multiple-barcoded-seqs-demultiplexing-
+# multiple-barcoded-seqs-demultiplexing
 Assign CRISPR data into bins, given an amplicons set.
 
 In order to demultiplex each of the libraries we have applied the following workflow:
